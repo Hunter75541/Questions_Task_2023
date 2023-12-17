@@ -65,23 +65,15 @@ class Hash : public GetData
 class MD5 : public Hash
 {
 	public:
-		int getHash(char * obj) override
+		bool checkHash(char * obj, int hash) override
 		{
-			return 1;
+			int hash_correct = getHash(obj);
+			if (hash_correct == hash)
+				return 1;
+			else 
+				return 0;
+			// return GetHash(obj) == hash  
 		}
-};
-
-class Valid_func : public Hash
-{
-	bool checkHash(char * obj, int hash) override
-	{
-		int hash_correct = getHash(obj);
-		if (hash_correct == hash)
-			return 1;
-		else 
-			return 0;
-		// return GetHash(obj) == hash  
-	}
 };
 
 
