@@ -51,6 +51,7 @@ class Get_Data_by_Http : public GetData
 {
 	void getter(string obj) override
 	{
+		arr = "Test";
 		cout << "Take data from IP" << endl;
 	}
 	
