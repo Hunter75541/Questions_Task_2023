@@ -1,18 +1,19 @@
 #include <iostream>
-#include <vector>
 #include <fstream>
+#include <string>
+
 using namespace std;
 
 
 class GetData
 {
 	protected:
-		vector<int> arr;
+		string arr;
 	public:
 		virtual void getter(string obj) = 0;
 		virtual void setter() = 0;
 		GetData() {}
-		GetData(vector<int> arr)
+		GetData(string arr)
 		{
 			this -> arr = arr;
 		}
@@ -24,6 +25,7 @@ class Get_Data_by_File : public GetData
 	public:
 	void getter(string obj) override
 	{
+		arr = "":
 		int tmp;
 		string path = obj;
 		fstream pf;
@@ -37,7 +39,7 @@ class Get_Data_by_File : public GetData
 			while(!pf.eof())
 			{
 				pf >> tmp; 
-				arr.push_back(tmp);
+				arr += tmp;
 			}
 		}
 		pf.close();
