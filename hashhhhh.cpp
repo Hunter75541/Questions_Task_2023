@@ -25,7 +25,7 @@ class Get_Data_by_File : public GetData
 	public:
 	void getter(string obj) override
 	{
-		arr = "":
+		arr = "";
 		int tmp;
 		string path = obj;
 		fstream pf;
