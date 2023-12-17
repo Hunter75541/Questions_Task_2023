@@ -59,17 +59,8 @@ class Hash : public GetData
 {
 	public:
 		virtual int getHash(char *obj) = 0; 
-};
-
-
-class Validation  : public Hash
-
-{
-	public:
 		virtual bool checkHash(char * obj, int p) = 0; 
 };
-
-
 
 class MD5 : public Hash
 {
@@ -80,7 +71,7 @@ class MD5 : public Hash
 		}
 };
 
-class Valid_func : public Validation
+class Valid_func : public Hash
 {
 	bool checkHash(char * obj, int hash) override
 	{
