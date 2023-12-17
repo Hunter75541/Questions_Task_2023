@@ -72,7 +72,7 @@ class MD5 : public Hash
 				return 1;
 			else 
 				return 0;
-			// return GetHash(obj) == hash  
+			// return getHash(obj) == hash  
 		}
 };
 
